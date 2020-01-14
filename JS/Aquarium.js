@@ -1,18 +1,33 @@
-// window.onload = function() {
-//   var canvasWidth = 900;
-//   var canvasHeight = 600;
-//   var ctx;
+var Aquarium = function() {
+  // this.x = x;
+  // this.y = y;
+  // this.simulation = simulation;
+  this.width = '900px';
+  this.height = '600px';
+  this.color = 'aquamarine';
+  this.border = '2px solid gray';
+  this.position = 'relative';
+  this.fishArray = [];
+};
 
-//   init();
+Aquarium.prototype.drawAquarium = function() {
+  this.myAquarium = document.createElement('div');
+  document.body.appendChild(this.myAquarium);
+  // this.myAquarium.setAttribute('id', 'aquarium');
+  this.myAquarium.style.backgroundColor = this.color;
+  this.myAquarium.style.width = this.width;
+  this.myAquarium.style.height = this.height;
+  this.myAquarium.style.border = this.border;
+  this.myAquarium.style.position = this.position;
+};
 
-//   function init() {
-//     var canvas = document.getElementById('canvas');
-//     canvas.height = canvasHeight;
-//     canvas.width = canvasWidth;
-//     canvas.style.border = '20px solid gray';
-//     canvas.style.margin = '50px auto';
-//     canvas.style.backgroundColor = 'aquamarine';
-//     document.body.appendChild(canvas);
-//     ctx = canvas.getContext('2d');
+Aquarium.prototype.addFish = function(newFish) {
+  this.fishArray.push(newFish);
+  console.log(this.fishArray);
+};
+
+// Aquarium.prototype.swimFish = function() {
+//   for (var i = 0; i > this.fishArray.length; i++) {
+//     this.fishArray[i].move();
 //   }
 // };
